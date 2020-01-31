@@ -2,7 +2,7 @@
 $hostName = '127.0.0.1';
 $userName = 'root';
 $password = '';
-$databaseName = 'CSEC2020'; 
+$databaseName = 'CSEC'; 
 
 $conn = mysqli_connect($hostName, $userName, $password, $databaseName);
 
