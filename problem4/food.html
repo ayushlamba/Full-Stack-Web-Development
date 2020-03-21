@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="foodyo_output.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+	var l=food.body.Recommendations.length;
+	var i;
+	console.log("The name of the Restaurant are:-")
+	for(i=1;i<=l;i++){
+		console.log("Restaurant no."+i+" "+food.body.Recommendations[i].RestaurantName);
+		fun(i);
+	}
+	//var ml=food.body.Recommendations.
+	
+	function  fun(i,l){
+		if(i==l){return;}
+		else{
+		//var l1=food.body.Recommendations[i].menu[0]["children"][i].length;
+		if(food.body.Recommendations[i].menu[0]["type"]=="sectionheader"){
+			var l=food.body.Recommendations[i].menu[0]["children"].length;
+			for(var a=0;a<l;a++){
+
+
+			if(food.body.Recommendations[i].menu[0]["children"][a]["selected"]==1 && food.body.Recommendations[i].menu[0]["children"][a]["type"]=="item"){
+
+				console.log(food.body.Recommendations[i].menu[0]["children"][a]["name"]);
+				if(food.body.Recommendations[i].menu[0]["children"][a].children["selected"]==1){
+					console.log(food.body.Recommendations[i].menu[0]["children"][a].children.name);
+				}
+				}
+
+			}
+		}
+	}
+	fun(i+1,l);
+}
+		// //	console.log(food.body.Recommendations[i].menu[0]["children"][l1]["type"]);
+           
+			
+		// }
+  //   function fun2(i){
+  //   	var l=food.body.Recommendations[i].menu[0]["children"].length;
+  //   	var a;
+  //   	for (a=0;a<l;a++){
+  //   		if(food.body.Recommendations[i].menu[0]["children"][a].type=="item"){
+  //   			fun3(a);
+  //   			// if(food.body.Recommendations[i].menu[0]["children"][a]["selected"]==1){
+  //   			// 	console.log(food.body.Recommendations[i].menu[0]["children"][a]['name']);
+
+  //   			}
+  //   		}
+
+
+  //   	}
+  //   function fun3(a){
+  //   	var l1=food.body.Recommendations[i].menu[0]["children"][a].children.length;
+  //   	if(food.body.Recommendations[i].menu[0]["children"][a].children["selected"]==1){
+  //   			console.log("1");
+
+
+  //   	}
+  //   }
+
+
+	
+	
+	</script>
+
+
+</body>
+</html>
